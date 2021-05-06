@@ -92,11 +92,3 @@ IT-Trends
 - Neue Blöcke werden etwa alle 10 Minuten erzeugt
 
 > Bitcoin ermöglicht es kryptografisch gesicherte, direkte Transaktionen ohne zentrale Vermittler in einem dezentralen Peer-to-Peer Netzwerk durchzuführen
-
-| **Vorteile**                                                                 | **Nachteile**                                                                   |
-|------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
-| - dezentral, unabhängig von Zentralbanken                                    | - hohe Eigenverantwortung der Nutzer (ohne Private-Key kein Zugriff auf Wallet) |
-| - sicherer Wertspeicher (maximale Anzahl von BTC begrenzt)                   | - irreversible Transaktionen (Diebstahl, ...)                                   |
-| - freie weltweite Transaktionen, ohne Sanktionen und hohe Transaktionskosten | - legt alle Transaktionen offen (Nachverfolgbarkeit vs. Privatsphäre)           |
-|                                                                              | - Nutzung für illegale Transaktionen möglich (Silk Road, ...)                   |
-|                                                                              | - hoher Stromverbrauch des verbreiteten Mining-Algorithmus                      |
