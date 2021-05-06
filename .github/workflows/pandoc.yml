@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  convert_via_pandoc_and_release:
+  convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -53,6 +53,7 @@ jobs:
           path: output
   release_pdfs:
     runs-on: ubuntu-18.04
+    needs: convert_via_pandoc
     if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
     steps:
       - uses: meeDamian/github-release@2.0 # create/override a release and attach a pdf
