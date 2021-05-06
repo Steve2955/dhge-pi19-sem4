@@ -2,8 +2,7 @@ name: Create PDF release from markdown
 
 on:
   push:
-    branches:
-      - main
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -52,6 +51,10 @@ jobs:
         with:
           name: output
           path: output
+  release_pdfs:
+    runs-on: ubuntu-18.04
+    if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
+    steps:
       - uses: meeDamian/github-release@2.0 # create/override a release and attach a pdf
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
