@@ -56,6 +56,11 @@ jobs:
     needs: convert_via_pandoc
     if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
     steps:
+      - name: Retrieve saved Docker image
+        uses: actions/download-artifact@v2
+        with:
+          name: output
+          path: output
       - uses: meeDamian/github-release@2.0 # create/override a release and attach a pdf
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
