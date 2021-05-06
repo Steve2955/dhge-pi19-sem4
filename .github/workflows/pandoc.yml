@@ -51,12 +51,8 @@ jobs:
         with:
           name: output
           path: output
-  release_pdfs:
-    runs-on: ubuntu-18.04
-    needs: convert_via_pandoc
-    if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
-    steps:
       - uses: meeDamian/github-release@2.0 # create/override a release and attach a pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
@@ -66,6 +62,7 @@ jobs:
           files: output/ABWL-LEDER.pdf
           allow_override: true
       - uses: meeDamian/github-release@2.0 # override release to attach another pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
@@ -75,6 +72,7 @@ jobs:
           files: output/DBS-DORENDORF.pdf
           allow_override: true
       - uses: meeDamian/github-release@2.0 # override release to attach another pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
@@ -84,6 +82,7 @@ jobs:
           files: output/ASM-GUENTHER.pdf
           allow_override: true
       - uses: meeDamian/github-release@2.0 # override release to attach another pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
@@ -93,6 +92,7 @@ jobs:
           files: output/SWE-KASCHE.pdf
           allow_override: true
       - uses: meeDamian/github-release@2.0 # override release to attach another pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
@@ -102,6 +102,7 @@ jobs:
           files: output/SWS-KUSCHE.pdf
           allow_override: true
       - uses: meeDamian/github-release@2.0 # override release to attach another pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
@@ -111,6 +112,7 @@ jobs:
           files: output/PRO-KASCHE.pdf
           allow_override: true
       - uses: meeDamian/github-release@2.0 # override release to attach another pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
@@ -120,6 +122,7 @@ jobs:
           files: output/EMB-GUENTHER.pdf
           allow_override: true
       - uses: meeDamian/github-release@2.0 # override release to attach another pdf
+        if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           tag: pdf-release
