@@ -8,9 +8,6 @@ on:
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
-    container:
-      volumes:
-        - pdf_output:/output
     steps:
       - uses: actions/checkout@v2
       - run: |
@@ -56,9 +53,6 @@ jobs:
           path: output
   release_pdfs:
     runs-on: ubuntu-18.04
-    container:
-      volumes:
-        - pdf_output:/output
     needs: convert_via_pandoc
     if: github.ref == 'refs/heads/main' # only publish if commited to the main branch
     steps:
